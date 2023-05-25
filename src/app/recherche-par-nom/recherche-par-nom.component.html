@@ -1,0 +1,49 @@
+<div class="container">
+
+     <!-- <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Departement :</label>
+        <input type="text" class="form-control" [(ngModel)]="nomDepartement" name="nomDepartement" class="form-control">
+        <button type="submit" (click)="rechercherDeps()" class="btn btn-primary mb-2 ml-2">Rechercher</button>
+        </div>
+        </form> -->
+        
+
+   <!-- <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2 mt-2 ">
+            <label>Nom Departement en tapant</label>
+            <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+            </div>
+    </form>  -->
+
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+        <label>Nom Departement en tapant</label>
+        <input #nom [(ngModel)]="searchTerm" name="searchTerm" class="form-control" >
+        </div>
+        </form>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr> <th>IdDepartement</th><th>NomDepartement</th> <th>Description</th><th>Faculté</th></tr>
+                </thead>
+                <tbody *ngFor="let departement of departements | searchFilter: searchTerm ">
+                    <!-- <tbody *ngFor="let departement of departements | filter:searchTerm "> -->
+
+                    <tr >
+                        <td>{{departement.idDepartement}}</td>
+                        <td>{{departement.nomDepartement}}</td>
+                        <td>{{departement.description}}</td>
+                        <td>{{departement.faculte.nom}}</td>
+                        <!-- <td><a class="btn btn-danger" (click)="supprimerDepartement(departement)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateDepartement',departement.idDepartement]">Modifier</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

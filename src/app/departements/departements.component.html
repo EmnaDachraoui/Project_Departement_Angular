@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr> <th>IdDepartement</th><th>NomDepartement</th> <th>Description</th><th>Faculté</th></tr>
+                </thead>
+                <tbody *ngFor="let departement of departements">
+                    <tr >
+                        <td>{{departement.idDepartement}}</td>
+                        <td>{{departement.nomDepartement}}</td>
+                        <td>{{departement.description}}</td>
+                        <td>{{departement.faculte.nom}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerDepartement(departement)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateDepartement',departement.idDepartement]">Modifier</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
