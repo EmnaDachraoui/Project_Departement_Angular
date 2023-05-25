@@ -9,7 +9,7 @@ import { DepartementService } from '../services/departement.service';
 })
 export class RechercheParFaculteComponent implements OnInit{
   IdFaculte!:number;
-  departements!:Departement[];
+  departements!:any;
   facultes!:Faculte[];
 
   constructor(private departementService:DepartementService){}
